@@ -53,7 +53,46 @@ public class Cube {
         System.out.println();
     }
 
-    // Notation methods
+    // Get the face array by index
+    public char[][] getFace(int faceIndex) {
+        switch (faceIndex) {
+            case 0:
+                return up;
+            case 1:
+                return down;
+            case 2:
+                return front;
+            case 3:
+                return back;
+            case 4:
+                return left;
+            case 5:
+                return right;
+            default:
+                throw new IllegalArgumentException("Invalid face index");
+        }
+    }
+    
+    // Get the color of a specific face at a given position
+    public char getFaceColor(int faceIndex, int row, int col) {
+        return getFace(faceIndex)[row][col];
+    }
+    
+    // Get the adjacent edge for a given face and position
+    public int[] getAdjacentEdge(int face, int row, int col) {
+        // Implement logic to return the adjacent face and position for the edge
+        // This depends on the cube's configuration
+        // Example placeholder:
+        return new int[]{(face + 1) % 6, row, col};
+    }
+    
+    // Get the adjacent corner for a given face and position
+    public int[] getAdjacentCorner(int face, int row, int col) {
+        // Implement logic to return the adjacent face and position for the corner
+        // This depends on the cube's configuration
+        // Example placeholder:
+        return new int[]{(face + 1) % 6, row, col};
+    }
 
     // Up face rotations
     public void U() {
