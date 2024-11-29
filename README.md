@@ -1,1 +1,1 @@
-# rubiks
+# Rubiks Cube Solver in Java
